@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vai e Volta Viagens! Venha voar com a gente!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../style/default.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", Arial, Helvetica, sans-serif
+    }
+  </style>
+</head>
+
+<body class="vvv-light-grey">
+  <div class="vvv-bar vvv-white vvv-border-bottom vvv-xlarge">
+    <a href="#" class="vvv-bar-item vvv-button vvv-text-red vvv-hover-red">
+      <b>
+        <i class="fa fa-map-marker vvv-margin-right"></i>
+        Vai e Volta
+      </b>
+    </a>
+    <a href="../../pages/login/index.html?signUp" class="vvv-bar-item vvv-right vvv-button vvv-text-red vvv-hover-red">
+      <b>
+        <i class="fa fa-user-plus"></i>
+        Cadastre-se!
+      </b>
+    </a>
+    <a href="../../pages/login/index.html" class="vvv-bar-item vvv-button vvv-right vvv-text-red vvv-hover-red">
+      <b>
+        <i class="fa fa-user"></i>
+        Entrar
+      </b>
+    </a>
+  </div>
+
+  <header class="vvv-display-container vvv-content vvv-hide-small" style="max-width:1500px">
+    <img class="vvv-image" src="../../images/aviaoVoando.jpg" alt="Avião Decolando" width="1500">
+    <div class="vvv-display-middle" style="width:65%">
+      <div class="vvv-bar vvv-black">
+        <button class="vvv-bar-item vvv-button tablink" onclick="openLink(event, 'Flight');">
+          <i class="fa fa-plane vvv-margin-right"></i>
+          Viajar
+        </button>
+      </div>
+      <div id="Flight" class="vvv-container vvv-white vvv-padding-16 myLink">
+        <h3>Viaje o mundo com a gente!</h3>
+        <div class="vvv-row-padding" style="margin:0 -16px;">
+          <div class="vvv-half">
+            <label>De</label>
+            <input class="vvv-input vvv-border" type="text" placeholder="Viajando de">
+          </div>
+          <div class="vvv-half">
+            <label>Para</label>
+            <input class="vvv-input vvv-border" type="text" placeholder="Chegando em">
+          </div>
+        </div>
+        <p><button class="vvv-button vvv-dark-grey">Buscar Viagens e Datas</button></p>
+      </div>
+    </div>
+  </header>
+
+  <footer class="vvv-container vvv-margin-top vvv-center vvv-opacity vvv-margin-bottom">
+    <h5>Vai e Volta Viagens Soluções em Transporte ™</h5>
+    <h5>Todos os Direitos Reservados</h5>
+  </footer>
+</body>
+
+</html>
