@@ -954,7 +954,7 @@ a {
 
 .vvv-top,
 .vvv-bottom {
-  position: fixed;
+  position: static;
   width: 100%;
   z-index: 1
 }
@@ -2000,7 +2000,7 @@ a {
   border-color: #616161 !important
 }
 
-.vvv-border-light-red{
+.vvv-border-light-red {
   border-color: #f87a71 !important
 }
 

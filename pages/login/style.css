@@ -227,17 +227,14 @@ input {
   width: 40px;
 }
 
-/* .background-image {
-  top: 0;
-  left: 0;
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  z-index: 0;
-} */
-
 .sign-up-form {
-  /* overflow: auto; */
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  text-align: center;
 }
 
 .submit-button {
@@ -246,6 +243,13 @@ input {
 
 .sign-in-form {
   height: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  text-align: center;
 }
 
 .form-content {
