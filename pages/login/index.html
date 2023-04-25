@@ -4,6 +4,7 @@
   <title>Vai e Volta Viagens! Venha voar com a gente!</title>
   <link rel="stylesheet" href="../../style/default.css" />
   <link rel="stylesheet" href="./style.css" />
+  <script src="./index.js"></script>
   <script>
     function activateRightPanel() {
       const container = document.getElementById('container');
@@ -26,28 +27,28 @@
   <div class="container" id="container">
 
     <div class="form-container sign-up-container">
-      <form class="sign-up-form" action="#">
+      <div class="sign-up-form" action="#">
         <div class="form-content">
           <h1>Criar conta</h1>
-          <input type="text" placeholder="Nome" />
-          <input type="number" placeholder="Idade" />
-          <input type="text" placeholder="Nome de Usuário" />
-          <input type="password" placeholder="Senha" />
-          <input type="password" placeholder="Confirmar Senha" />
-          <input type="text" placeholder="CPF" />
-          <input type="text" placeholder="Profissão" />
-          <input type="tel" placeholder="Telefone" />
-          <button class="submit-button">Criar conta</button>
+          <input id="Nome" type="text" placeholder="Nome" />
+          <input id="Idade" type="number" placeholder="Idade" />
+          <input id="Username" type="text" placeholder="Nome de Usuário" />
+          <input id="Senha" type="password" placeholder="Senha" />
+          <input id="ConfirmSenha" type="password" placeholder="Confirmar Senha" />
+          <input id="CPF" type="text" placeholder="CPF" />
+          <input id="Prof" type="text" placeholder="Profissão" />
+          <input id="Tel" type="tel" placeholder="Telefone" />
+          <button class="submit-button" onclick="FetchAndPostFormData()">Criar conta</button>
         </div>
-      </form>
+      </div>
     </div>
     <div class="form-container sign-in-container">
-      <form class="sign-in-form" action="#">
+      <div class="sign-in-form">
         <h1>Entrar</h1>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Senha" />
-        <button>Entrar</button>
-      </form>
+        <input id="Login" type="text" placeholder="Login" />
+        <input id="SenhaLogin" type="password" placeholder="Senha" />
+        <button onclick="FetchLoginAndPostLoginData()">Entrar</button>
+      </div>
     </div>
     <div class="overlay-container">
       <div class="overlay">
