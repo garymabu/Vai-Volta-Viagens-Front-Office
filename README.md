@@ -1,9 +1,14 @@
 # Vai-Volta-Viagens-Front-Office
-Software system for Vai e Volta Viagens company
 
-# Description
-Front-end intended for users
+## Introdução
+Frontend do projeto Vai&Volta Viagens (VVV)
 
-# Running locally
-Just open the .html files.
-May change in the future.
+## Pré-requisitos
+Rodar o backend. Leia o [README](https://github.com/garymabu/Vai-Volta-Viagens-Backend/blob/main/README.md) do backend
+
+## Descrição
+Frontend para usuários.
+
+## Rodando localmente
+Abra os arquivos .html <br>
+Talvez mude futuramente.
