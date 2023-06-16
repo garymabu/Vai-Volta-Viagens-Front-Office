@@ -18,6 +18,10 @@ img {
   object-fit: contain;
 }
 
+input {
+  max-height: 2.5rem;
+}
+
 .main-wrapper {
   display: grid;
   justify-items: center;
@@ -106,16 +110,25 @@ img {
 }
 
 .update-form-container {
-  padding: 2rem;
   display: grid;
-  gap: 2rem;
+  grid-template-rows: 3rem 17rem 3rem;
+  width: 25rem; 
+  height: 26rem;
+  padding: 2rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30%; 
-  height: 50%;
   background-color: rgb(238, 238, 238);
+  align-items: center;
+}
+
+.update-inputs {
+  display: grid;
+  justify-self: center;
+  grid-template-rows: 4rem 4rem 4rem;
+  grid-template-columns: 20rem;
+
 }
 
 .deletion-container {
