@@ -101,7 +101,58 @@ async function postFormData() {
   }
 
 }
- 
+
+//Event listeners
+async function fetchEmployees() {
+
+  // TODO: Integration with backend
+  // const response = await fetch(`${homeDomain}/v1/employee`,
+    // {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json',
+    //   },
+    //   body: JSON.stringify(token),
+    // });
+  // const { data } = result.json();
+
+  const response = { status: 200 };
+
+  // const data = [];
+
+  const data = [
+    {
+      id: "130tbvg302t8",
+      name: "Zeca Gado",
+      address: "Rua da Macumba, 123, Rio de Janeiro, RJ",
+      type: "Registrador de Modal"
+    },
+    {
+      id: "8230tbvg302t8",
+      name: "Mamou Gado",
+      address: "Rua da Macumba, 123, Rio de Janeiro, RJ",
+      type: "Registrador de Modal"
+    },
+    {
+      id: "bvg302t8dethjk",
+      name: "Chupou Gado",
+      address: "Rua da Macumba, 123, Rio de Janeiro, RJ",
+      type: "Registrador de Modal"
+    },
+    {
+      id: "wejkoprvyh4p",
+      name: "Fudeu Gado",
+      address: "Rua da Macumba, 123, Rio de Janeiro, RJ",
+      type: "Registrador de Modal"
+    },
+  ];
+
+  if (response.status === 200 && data.length) insertEmployeeCard(data);
+  else insertEmptyMessage();
+
+}
+
 function toggleUpdateContainer() { 
   
   const updateContainer = document.getElementById('update');
@@ -223,7 +274,7 @@ function insertEmptyMessage() {
 
   const html = `
     <div class="card" id="card">
-      <p>Sem funcionários cadastrados.</p>
+      <p>Sem funcionários cadastrados</p>
     </div>
   `;
 
