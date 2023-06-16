@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script defer src="./index.js" type="module"></script>
-
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="../../style/default.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -22,41 +21,42 @@
       }
     </style>
   </head>
+
   <body>
     <div class="main-wrapper" >
       <section class="upper-section">
         <h1>Registro</h1>
         <div class="form-wrapper">
-          <input id="Nome" type="text" placeholder="Nome" />
-          <input id="Endereco" type="text" placeholder="Endereço" />
-          <input id="Tipo" type="text" placeholder="Tipo" />
-          <button class="submit-button" onclick="postFormData()">Entrar</button>
+          <input id="name" type="text" placeholder="Nome" />
+          <input id="address" type="text" placeholder="Endereço" />
+          <input id="type" type="text" placeholder="Tipo" />
+          <button class="submit-employee-info-button" onclick="postFormData()">Entrar</button>
         </div>
       </section>
       <hr>
       <section class="lower-section">
-        <h2>Funcionários atuais:</h2>
-        <div class="employees-wrapper" id="wrapper">
-          <!-- <div class="card">
-            <p><strong>id:</strong> 193024513ihj4bt23rgb20395</p>
-            <p><strong>Nome:</strong> Fulanin do Rego</p>
-            <p><strong>Endereço:</strong> Rua da Macumba, 123, Rio de Janeiro, RJ</p>
-            <p><strong>Tipo:</strong> Registrados de Modal</p>
-          </div>
-          <div class="card">
-            <p><strong>id:</strong> 193024513ihj4bt23rgb20395</p>
-            <p><strong>Nome:</strong> Fulanin do Rego</p>
-            <p><strong>Endereço:</strong> Rua da Macumba, 123, Rio de Janeiro, RJ</p>
-            <p><strong>Tipo:</strong> Registrados de Modal</p>
-          </div>
-          <div class="card">
-            <p><strong>id:</strong> 193024513ihj4bt23rgb20395</p>
-            <p><strong>Nome:</strong> Fulanin do Rego</p>
-            <p><strong>Endereço:</strong> Rua da Macumba, 123, Rio de Janeiro, RJ</p>
-            <p><strong>Tipo:</strong> Registrados de Modal</p>
-          </div> -->
+        <h2>Funcionários cadastrados:</h2>
+        <div class="card-wrapper" id="wrapper"></div>
         </div>
       </section>
+    </div>
+    <div class="update-popup-container" id="update">
+      <div class="update-form-container">
+        <input id="update-name" type="text" placeholder="Nome" />
+        <input id="update-address" type="text" placeholder="Endereço" />
+        <input id="update-type" type="text" placeholder="Tipo" />
+        <div class="update-button-container">
+          <button class="post-update-button">Atualizar</button>  
+          <button class="cancel-update-button">Cancelar</button>  
+        </div>
+      </div>
+    </div>
+    <div class="deletion-popup-container" id="delete">
+      <div class="deletion-container">
+        <p>Deseja realmente apagar o funcionário?</p>
+        <button class="confirm-button">Sim</button>  
+        <button class="cancel-button">Não</button>  
+      </div>
     </div>
   </body>
 </html>
