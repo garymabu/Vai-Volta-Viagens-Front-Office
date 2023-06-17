@@ -1,0 +1,38 @@
+main {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.booking-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  width: 30rem;
+  height: 30rem;
+  background-color: rgb(217, 214, 214);
+  border-radius: 5rem;
+  box-shadow: 10px 5px 5px rgb(167, 167, 167);
+}
+
+.btn-reserve {
+  width: 8rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgb(133, 133, 133);
+  cursor: pointer;
+}
+.btn-reserve:hover {
+  color: white;
+  background-color: rgb(70, 70, 70);
+  transition: 0.4s;
+}
+
+.booking-card > div {
+  margin-top: 2rem;
+}
+
+

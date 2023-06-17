@@ -1,0 +1,78 @@
+main {
+  padding: 0 13rem;
+}
+
+h2 {
+  margin-bottom: 2rem;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+
+main > div {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+main > div > div > div:nth-child(2){
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+
+}
+
+
+.travel-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background-color: rgb(217, 214, 214);
+  box-shadow: 10px 5px 5px rgb(167, 167, 167);
+}
+
+.btn-reserve {
+  margin-top: 1rem;
+  width: 8rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgb(133, 133, 133);
+  cursor: pointer;
+}
+
+.btn-reserve:hover {
+  color: white;
+  background-color: rgb(70, 70, 70);
+  transition: 0.4s;
+}
+
+
+
+
+.travel-card > div:last-child{
+  display: flex;
+  flex-direction: column;
+}
+
+.origin-destiny-content > p {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.origin-destiny-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+#cardBox > div {
+  margin-bottom: 2rem;
+}
