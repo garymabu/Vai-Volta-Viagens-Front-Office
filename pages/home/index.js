@@ -7,20 +7,23 @@ const travels = [
     destino: "Porto Alegre",
     horaPartida: 10,
     horaChegada: 15,
+    valor: 500.00
   },
   {
     id: 2,
     origem: "São Paulo",
     destino: "Rio de Janeiro",
     horaPartida: 17,
-    horaChegada: 18
+    horaChegada: 18,
+    valor: 400.00
   },
   {
     id: 3,
     origem: "Bahia",
     destino: "Porto Alegre",
     horaPartida: 10,
-    horaChegada: 16
+    horaChegada: 16,
+    valor: 300.00
   },
 ]
 
@@ -60,8 +63,6 @@ async function FetchDataAndRenderCards(){
 
   const searchedTravels = travels.filter((travel) => travel.origem === origem && travel.destino === destino)
 
-  console.log(searchedTravels)
-  
   let travelsHTML = searchedTravels.map((travel) => {
       return `
         <div id="travelCard" class="travel-card">
@@ -73,9 +74,10 @@ async function FetchDataAndRenderCards(){
           <div>
             <span id="horaChegada">Horário de partida: ${travel.horaPartida}:00</span>
             <span id="horaPartida">Horário de chegada: ${travel.horaChegada}:00</span>
+            <span id="Valor">Valor: ${travel.valor} R$</span>
           </div>
           <div>
-            <button onclick="RedirectToBookingPage()" class="btn-reserve">Clique para saber mais</button>
+            <button onclick="RedirectToBookingPage()" class="btn-reserve">Reservar</button>
           </div>
         </div>
       `
@@ -98,9 +100,6 @@ function RedirectToBookingPage() {
     window.location.href = `../booking/index.html`;
   })
 }
-
-
-console.log(travelsHTML)
 
 FetchDataAndRenderCards()
 
