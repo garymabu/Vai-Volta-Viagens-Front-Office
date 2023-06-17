@@ -23,10 +23,6 @@ main > div > div > div:nth-child(2){
   flex-direction: column;
 }
 
-.container {
-
-}
-
 
 .travel-card {
   display: flex;
