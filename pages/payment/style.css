@@ -1,0 +1,81 @@
+main {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    margin-top: 5rem;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .payment-details {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .payment-form {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  input[type="submit"] {
+    background-color: #ff3131;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #ff1818;
+  }
+
+  .sidebar {
+    width: 200px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .item-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .item-list li {
+    margin-bottom: 10px;
+  }
+
+  .total {
+    font-weight: bold;
+    margin-top: 20px;
+  }
