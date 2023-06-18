@@ -11,6 +11,14 @@ const travels = [
   },
   {
     id: 2,
+    origem: "Rio de Janeiro",
+    destino: "Porto Alegre",
+    horaPartida: 10,
+    horaChegada: 15,
+    valor: 400.00
+  },
+  {
+    id: 3,
     origem: "São Paulo",
     destino: "Rio de Janeiro",
     horaPartida: 17,
@@ -18,7 +26,7 @@ const travels = [
     valor: 400.00
   },
   {
-    id: 3,
+    id: 4,
     origem: "Bahia",
     destino: "Porto Alegre",
     horaPartida: 10,
@@ -65,21 +73,17 @@ async function FetchDataAndRenderCards(){
 
   let travelsHTML = searchedTravels.map((travel) => {
       return `
-        <div id="travelCard" class="travel-card">
-          <div class="origin-destiny-content">
-            <h3 id="Origem">${travel.origem}</h3>
-            <p> → </p>
-            <h3 id="Destino">${travel.destino}</h3>
-          </div>
-          <div>
-            <span id="horaChegada">Horário de partida: ${travel.horaPartida}:00</span>
-            <span id="horaPartida">Horário de chegada: ${travel.horaChegada}:00</span>
-            <span id="Valor">Valor: ${travel.valor} R$</span>
-          </div>
-          <div>
-            <button onclick="RedirectToBookingPage()" class="btn-reserve">Reservar</button>
-          </div>
-        </div>
+      <div class="card">
+        <div class="card-header">Descrição da Viagem:</div>
+        <div class="card-info">
+        <p><strong>Origem:</strong> ${travel.origem}</p>
+        <p><strong>Destino:</strong> ${travel.destino}</p>
+        <p><strong>Preço:</strong> R$${travel.valor}</p>
+        <p><strong>Horário de Partida:</strong> ${travel.horaPartida}:00</p>
+        <p><strong>Horário de Chegada:</strong> ${travel.horaChegada}:00</p>
+      </div>
+      <a href="../booking/index.html" class="button">Fazer Reserva</a>
+     </div>
       `
   })
 
