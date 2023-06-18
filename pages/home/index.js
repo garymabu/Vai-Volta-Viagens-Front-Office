@@ -39,7 +39,7 @@ function FetchFormData(){
 
 
 async function FetchDataAndRenderCards(){
-  const cardBox = document.getElementById('cardBox')
+  const containerCards = document.querySelector('.container-cards')
   const {
     origem,
     destino
@@ -63,22 +63,19 @@ async function FetchDataAndRenderCards(){
   console.log(searchedTravels)
   
   let travelsHTML = searchedTravels.map((travel) => {
-      return `
-        <div id="travelCard" class="travel-card">
-          <div class="origin-destiny-content">
-            <h3 id="Origem">${travel.origem}</h3>
-            <p> → </p>
-            <h3 id="Destino">${travel.destino}</h3>
-          </div>
-          <div>
-            <span id="horaChegada">Horário de partida: ${travel.horaPartida}:00</span>
-            <span id="horaPartida">Horário de chegada: ${travel.horaChegada}:00</span>
-          </div>
-          <div>
-            <button onclick="RedirectToBookingPage()" class="btn-reserve">Clique para saber mais</button>
-          </div>
-        </div>
-      `
+    return `
+    <div class="card">
+      <div class="card-header">Viagem</div>
+      <div class="card-info">
+        <p><strong>Origem: </strong>${travel.origem}</p>
+        <p><strong>Destino: </strong>${travel.destino}</p>
+        <p><strong>Preço: </strong> R$${travel.valor}</p>
+        <p><strong>Horário de Partida :</strong> ${travel.horaPartida}:00</p>
+        <p><strong>Horário de Chegada :</strong> ${travel.horaChegada}:00</p>
+      </div>
+      <a href="pagina_de_reserva.html" class="button">Fazer Reserva</a>
+    </div>  
+  `
   })
 
   if(travelsHTML.length < 1) {
@@ -89,8 +86,7 @@ async function FetchDataAndRenderCards(){
     `
   }
 
-  let html = travelsHTML.join('')
-  cardBox.innerHTML = html
+  containerCards.innerHTML = travelsHTML
 }
 
 function RedirectToBookingPage() {
