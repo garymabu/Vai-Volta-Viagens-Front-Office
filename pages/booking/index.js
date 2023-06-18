@@ -3,6 +3,10 @@ const passengerCountInfo = document.getElementById('passenger-count-info')
 const modalOverlay = document.querySelector('.modal-overlay');
 const modal = document.querySelector('.modal');
 
+document.getElementById('user').addEventListener('click', function(ev){
+  ev.preventDefault()
+})
+
 document.getElementById('confirm-passenger-count').addEventListener('click', function() {
   const passengerCount = parseInt(passengerCountInput.value);
 
