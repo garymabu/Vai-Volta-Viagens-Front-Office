@@ -7,20 +7,31 @@ const travels = [
     destino: "Porto Alegre",
     horaPartida: 10,
     horaChegada: 15,
+    valor: 500.00
   },
   {
     id: 2,
-    origem: "São Paulo",
-    destino: "Rio de Janeiro",
-    horaPartida: 17,
-    horaChegada: 18
+    origem: "Rio de Janeiro",
+    destino: "Porto Alegre",
+    horaPartida: 10,
+    horaChegada: 15,
+    valor: 400.00
   },
   {
     id: 3,
+    origem: "São Paulo",
+    destino: "Rio de Janeiro",
+    horaPartida: 17,
+    horaChegada: 18,
+    valor: 400.00
+  },
+  {
+    id: 4,
     origem: "Bahia",
     destino: "Porto Alegre",
     horaPartida: 10,
-    horaChegada: 16
+    horaChegada: 16,
+    valor: 300.00
   },
 ]
 
@@ -60,8 +71,6 @@ async function FetchDataAndRenderCards(){
 
   const searchedTravels = travels.filter((travel) => travel.origem === origem && travel.destino === destino)
 
-  console.log(searchedTravels)
-  
   let travelsHTML = searchedTravels.map((travel) => {
     return `
     <div class="card">
@@ -94,9 +103,6 @@ function RedirectToBookingPage() {
     window.location.href = `../booking/index.html`;
   })
 }
-
-
-console.log(travelsHTML)
 
 FetchDataAndRenderCards()
 
