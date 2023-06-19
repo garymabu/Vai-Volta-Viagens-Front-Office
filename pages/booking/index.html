@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Vai e Volta Viagens! Venha voar com a gente!</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../style/default.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <script defer src="./index.js"></script>
-    <style>
-      body,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Raleway", Arial, Helvetica, sans-serif
-      }
-    </style>
-  
-  </head>
+
+<head>
+  <title>Vai e Volta Viagens! Venha voar com a gente!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../style/default.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./index.js"></script>
+  <script>
+    const homeDomain = 'http://localhost:8080';
+
+    async function GetUser() {
+      const result = await fetch(`${homeDomain}/v1/profile/client`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+        },
+      });
+      document.querySelector('#userName').innerHTML = (await result.json()).login;
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      GetUser();
+    });
+  </script>
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", Arial, Helvetica, sans-serif
+    }
+  </style>
+
+</head>
+
 <body class="vvv-light-grey">
   <div class="vvv-bar vvv-white vvv-border-bottom vvv-xlarge">
-    <a href="#" class="vvv-bar-item vvv-button vvv-text-red vvv-hover-red">
+    <a href="../home/index.html" class="vvv-bar-item vvv-button vvv-text-red vvv-hover-red">
       <b>
         <i class="fa fa-map-marker vvv-margin-right"></i>
         Vai e Volta
@@ -38,8 +58,9 @@
       </b>
     </a>
     <a id="user" href="" class="vvv-bar-item vvv-button vvv-right vvv-text-red vvv-hover-red">
-      <b>
+      <b style="display:flex;align-items: center;">
         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        <p style="margin-top:0;margin-bottom:0;margin-left: 5px;" id="userName"></p>
       </b>
     </a>
   </div>
@@ -50,7 +71,7 @@
       <input type="number" id="passenger-count" name="passenger-count" min="1">
       <button id="confirm-passenger-count">Confirmar</button>
     </div>
-    
+
     <div id="reservation-info">
       <h3>Detalhes da Reserva: </h3>
       <p><strong>Origem: </strong><span id="origin"></span></p>
@@ -62,7 +83,7 @@
       <button onclick="" id="confirm-reservation" class="confirm-button">Confirmar Reserva</button>
     </div>
     <div class="modal-overlay"></div>
-  
+
     <div class="modal">
       <button class="close-modal">&times;</button>
       <h2>Informações dos Passageiros</h2>
@@ -75,4 +96,5 @@
     </div>
   </main>
 </body>
+
 </html>

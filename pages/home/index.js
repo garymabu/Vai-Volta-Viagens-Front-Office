@@ -83,53 +83,34 @@ async function FetchDataAndRenderCards() {
         <h3 id="Destino">${route.lastTrip.arrivalLocalization.cityName}</h3>
       </div>
       <div>
-        <span id="horaChegada">Horário de partida: ${route.firstTrip.departureDatetime}:00</span>
-        <span id="horaPartida">Horário de chegada: ${route.lastTrip.arrivalDatetime}:00</span>
+        <span id="horaChegada">Horário de partida: ${
+          route.firstTrip.departureDatetime
+        }:00</span>
+        <span id="horaPartida">Horário de chegada: ${
+          route.lastTrip.arrivalDatetime
+        }:00</span>
       </div>
       <div>
-        <button onclick="RedirectToBookingPage()" class="btn-reserve">Clique para saber mais</button>
+        <button onclick="RedirectToBookingPage([${route.tripsUntilDestination
+          .map(({ id }) => `'${id}'`)
+          .join(",")}])" class="btn-reserve">Clique para saber mais</button>
       </div>
     `;
     cardBox.appendChild(card);
   });
-  // const searchedTravels = travels.filter(
-  //   (travel) => travel.origem === origem && travel.destino === destino
-  // );
 
-  // let travelsHTML = searchedTravels.map((travel) => {
-  //   return `
-  //       <div id="travelCard" class="travel-card">
-  //         <div class="origin-destiny-content">
-  //           <h3 id="Origem">${travel.origem}</h3>
-  //           <p> → </p>
-  //           <h3 id="Destino">${travel.destino}</h3>
-  //         </div>
-  //         <div>
-  //           <span id="horaChegada">Horário de partida: ${travel.horaPartida}:00</span>
-  //           <span id="horaPartida">Horário de chegada: ${travel.horaChegada}:00</span>
-  //         </div>
-  //         <div>
-  //           <button onclick="RedirectToBookingPage()" class="btn-reserve">Clique para saber mais</button>
-  //         </div>
-  //       </div>
-  //     `;
-  // });
-
-  // if (travelsHTML.length < 1) {
-  //   travelsHTML[0] = `
-  //     <div>
-  //       <h2>Nenhuma viagem encontrada!</h2>
-  //     </div>
-  //   `;
-  // }
-
-  // let html = travelsHTML.join("");
-  // cardBox.innerHTML = htmla;
+  if (routes.length === 0) {
+    const noRoutesMessage = document.createElement("h3");
+    noRoutesMessage.innerText = "Não há viagens disponíveis para este trajeto.";
+    cardBox.appendChild(noRoutesMessage);
+  }
 }
 
-function RedirectToBookingPage() {
+function RedirectToBookingPage(ids) {
   setTimeout(() => {
-    window.location.href = `../booking/index.html`;
+    window.location.href = `../login/index.html?redirectUrl=${encodeURI(
+      `../booking/index.html?trips=${JSON.stringify(ids)}`
+    )}`;
   });
 }
 

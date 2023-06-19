@@ -12,7 +12,7 @@
     const homeDomain = 'http://localhost:8080';
 
     async function GetUser() {
-      const result = await fetch(`${homeDomain}/v1/profile`, {
+      const result = await fetch(`${homeDomain}/v1/profile/client`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@
       </b>
     </a>
 
-    <a href="#" class="vvv-bar-item vvv-button vvv-right vvv-text-red vvv-hover-red">
+    <a href="../my_bookings/index.html" class="vvv-bar-item vvv-button vvv-right vvv-text-red vvv-hover-red">
       <b>
         <i class="fa fa-suitcase" aria-hidden="true"></i>
         Minhas viagens
@@ -64,14 +64,8 @@
   </div>
 
   <main class="vvv-main-content vvv-display-container vvv-content vvv-white" style="max-width: 2000px; height: 100%;">
-    <div class="vvv-padding">
-      <h1 class="vvv-xxlarge">Minhas Viagens</h1>
-      <b class="vvv-large">Aqui você irá encontrar tudo o que é necessário para planejar e
-        organizar a viagem dos seus sonhos!</b>
-    </div>
 
-    <div class="vvv-display-container vvv-content"
-      style="max-width: 2000px; background-color: #f1f1f1; height: 100%;">
+    <div class="vvv-display-container vvv-content" style="max-width: 2000px; background-color: #f1f1f1; height: 100%;">
       <div class="vvv-display-middle vvv-padding-bottom-128">
         <b class="vvv-xlarge">Escolha seu <b class="vvv-text-red">próximo destino</b> com a VVV
           !</b><br />
