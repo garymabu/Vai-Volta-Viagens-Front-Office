@@ -12,11 +12,14 @@ html {
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html {
   -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%;
+  height: 100vh;
+
 }
 
 body {
-  margin: 0
+  margin: 0;
+  height: 100vh;
 }
 
 article,
@@ -2022,4 +2025,8 @@ a {
 .vvv-border-pale-blue,
 .vvv-hover-border-pale-blue:hover {
   border-color: #e7ffff !important
+}
+
+.vvv-footer {
+  margin-top: 2rem;
 }

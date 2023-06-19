@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="../../style/default.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./index.js"></script>
   <style>
     body,
     h1,
@@ -57,18 +59,23 @@
         <div class="vvv-row-padding" style="margin:0 -16px;">
           <div class="vvv-half">
             <label>De</label>
-            <input class="vvv-input vvv-border" type="text" placeholder="Viajando de">
+            <input id="Origem" class="vvv-input vvv-border" type="text" placeholder="Viajando de">
           </div>
           <div class="vvv-half">
             <label>Para</label>
-            <input class="vvv-input vvv-border" type="text" placeholder="Chegando em">
+            <input id="Destino" class="vvv-input vvv-border" type="text" placeholder="Chegando em">
           </div>
         </div>
-        <p><button class="vvv-button vvv-dark-grey">Buscar Viagens e Datas</button></p>
+        <p><button onclick="FetchDataAndRenderCards()" class="vvv-button vvv-dark-grey">Buscar Viagens e Datas</button></p>
       </div>
     </div>
   </header>
-
+  <main>
+    <h2>Viagens disponíveis:</h2>
+    <div id="cardBox">
+    </div>
+    <a></a>
+  </main>
   <footer class="vvv-container vvv-margin-top vvv-center vvv-opacity vvv-margin-bottom">
     <h5>Vai e Volta Viagens Soluções em Transporte ™</h5>
     <h5>Todos os Direitos Reservados</h5>
