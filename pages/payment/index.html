@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vai e Volta Viagens! Venha voar com a gente!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style/default.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./index.js"></script>
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Raleway", Arial, Helvetica, sans-serif
+      }
+    </style>
+  
+  </head>
+<body class="vvv-light-grey">
+  <div class="vvv-bar vvv-white vvv-border-bottom vvv-xlarge">
+    <a href="#" class="vvv-bar-item vvv-button vvv-text-red vvv-hover-red">
+      <b>
+        <i class="fa fa-map-marker vvv-margin-right"></i>
+        Vai e Volta
+      </b>
+    </a>
+    <a href="../../pages/login/index.html?signUp" class="vvv-bar-item vvv-right vvv-button vvv-text-red vvv-hover-red">
+      <b>
+        <i class="fa fa-user-plus"></i>
+        Cadastre-se!
+      </b>
+    </a>
+    <a href="../../pages/login/index.html" class="vvv-bar-item vvv-button vvv-right vvv-text-red vvv-hover-red">
+      <b>
+        <i class="fa fa-user"></i>
+        Entrar
+      </b>
+    </a>
+  </div>
+  <main>
+    <div class="container">
+        <div class="payment-details">
+          <h1>Tela de Pagamento</h1>
+          <form class="payment-form">
+            <label for="name">Nome no Cartão:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="cardNumber">Número do Cartão:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+    
+            <label for="expiryDate">Data de Expiração:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA" required>
+    
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+    
+            <label for="paymentMethod">Método de Pagamento:</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+              <option value="credit">Cartão de Crédito</option>
+              <option value="debit">Cartão de Débito</option>
+            </select>
+    
+            <input type="submit" value="Pagar">
+          </form>
+        </div>
+    
+        <div class="sidebar">
+          <h2>Detalhes da Compra</h2>
+          <ul class="item-list">
+            <li>Passagem Aérea - R$ 500,00</li>
+            <li>Taxas - R$ 50,00</li>
+          </ul>
+          <div class="total">
+            Valor Total: R$ 550,00
+          </div>
+        </div>
+      </div>
+  </main>
+</body>
+</html>
