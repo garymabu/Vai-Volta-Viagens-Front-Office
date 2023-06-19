@@ -30,11 +30,19 @@ document
     const passengerAges = Array.from(
       document.querySelectorAll(".passenger-age")
     ).map((input) => Number(input.value));
+    const passengerNames = Array.from(
+      document.querySelectorAll(".passenger-name")
+    ).map((input) => input.value);
+
+    const passengers = passengerNames.map((name, index) => ({
+      name,
+      age: passengerAges[index],
+    }));
     if (Math.max(...passengerAges) < 21)
       alert("Não é permitido menores de 21 anos sem acompanhante");
     else {
       closeModal();
-      showReservationInfo();
+      showReservationInfo(passengers);
     }
   });
 
@@ -94,7 +102,27 @@ async function getTripInfo() {
   return filteredTrips;
 }
 
-async function showReservationInfo() {
+async function getTripEstimations(passengers) {
+  const tripEstimationResponse = await fetch(
+    "http://localhost:8080/v1/trip/cost-estimation",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({
+        trips: tripIds,
+        participantList: passengers,
+      }),
+    }
+  );
+  const tripsEstimation = await tripEstimationResponse.json();
+  return tripsEstimation;
+}
+
+async function showReservationInfo(passengers) {
   const reservationCard = document.getElementById("reservation-card");
   const reservationInfo = document.getElementById("reservation-info");
   const origin = document.getElementById("origin");
@@ -104,6 +132,8 @@ async function showReservationInfo() {
   const price = document.getElementById("price");
 
   const trips = await getTripInfo();
+  const tripEstimation = await getTripEstimations(passengers);
+  console.log("tripEstimation", tripEstimation);
   const [firstTrip] = trips;
   const [lastTrip] = trips.slice(-1);
 
@@ -125,7 +155,7 @@ async function showReservationInfo() {
 
   duration.textContent = `${hoursDiff} horas`;
   scale.textContent = `${trips.length - 1} escala(s)`;
-  price.textContent = "R$ 200";
+  price.textContent = `R$ ${tripEstimation.totalCost}`;
 
   reservationCard.style.display = "none";
   reservationInfo.style.display = "block";
