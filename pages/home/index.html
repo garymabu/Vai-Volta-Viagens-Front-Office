@@ -56,25 +56,26 @@
       </div>
       <div id="Flight" class="vvv-container vvv-white vvv-padding-16 myLink">
         <h3>Viaje o mundo com a gente!</h3>
+        <datalist id="localizations">
+        </datalist>
         <div class="vvv-row-padding" style="margin:0 -16px;">
           <div class="vvv-half">
             <label>De</label>
-            <input id="Origem" class="vvv-input vvv-border" type="text" placeholder="Viajando de">
+            <input list="localizations" id="Origem" class="vvv-input vvv-border" type="text" placeholder="Viajando de">
           </div>
           <div class="vvv-half">
             <label>Para</label>
-            <input id="Destino" class="vvv-input vvv-border" type="text" placeholder="Chegando em">
+            <input list="localizations" id="Destino" class="vvv-input vvv-border" type="text" placeholder="Chegando em">
           </div>
         </div>
-        <p><button onclick="FetchDataAndRenderCards()" class="vvv-button vvv-dark-grey">Buscar Viagens e Datas</button></p>
+        <p><button onclick="FetchDataAndRenderCards()" class="vvv-button vvv-dark-grey">Buscar Viagens e Datas</button>
+        </p>
       </div>
     </div>
   </header>
   <main>
-    <h2>Viagens disponíveis:</h2>
     <div id="cardBox">
     </div>
-    <a></a>
   </main>
   <footer class="vvv-container vvv-margin-top vvv-center vvv-opacity vvv-margin-bottom">
     <h5>Vai e Volta Viagens Soluções em Transporte ™</h5>
