@@ -31,41 +31,47 @@
         Vai e Volta
       </b>
     </a>
-    <a href="../../pages/login/index.html?signUp" class="vvv-bar-item vvv-right vvv-button vvv-text-red vvv-hover-red">
+    <a href="../my_bookings/index.html" class="vvv-bar-item vvv-right vvv-button vvv-text-red vvv-hover-red">
       <b>
-        <i class="fa fa-user-plus"></i>
-        Cadastre-se!
+        <i class="fa fa-suitcase" aria-hidden="true"></i>
+        Minhas Reservas
       </b>
     </a>
-    <a href="../../pages/login/index.html" class="vvv-bar-item vvv-button vvv-right vvv-text-red vvv-hover-red">
+    <a id="user" href="" class="vvv-bar-item vvv-button vvv-right vvv-text-red vvv-hover-red">
       <b>
-        <i class="fa fa-user"></i>
-        Entrar
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
       </b>
     </a>
   </div>
   <main>
-    <div class="booking-card">
-      <h3><strong>De: </strong>Rio de Janeiro</h3>
-      <h3><strong>Para: </strong>São Paulo</h3>
-      <div>
-        <span>
-          <strong>Tempo de duração:</strong> 3 horas
-        </span>
-      </div>
-      <div>
-        <span>
-          <strong>Valor:</strong> 500.00 R$
-        </span>
-      </div>
-      <div>
-        <span>
-          <strong>Tipo de modal:</strong> Avião
-        </span>
-      </div>
-      <div>
-        <button onclick="" class="btn-reserve">Reservar</button>
-      </div>
+    <div id="reservation-card">
+      <h2>Reserva de Viagem</h2>
+      <label for="passenger-count">Quantidade de Passagens:</label>
+      <input type="number" id="passenger-count" name="passenger-count" min="1">
+      <button id="confirm-passenger-count">Confirmar</button>
+    </div>
+    
+    <div id="reservation-info">
+      <h3>Detalhes da Reserva: </h3>
+      <p><strong>Origem: </strong><span id="origin"></span></p>
+      <p><strong>Destino: </strong><span id="destination"></span></p>
+      <p><strong>Duração da Viagem: </strong><span id="duration"></span></p>
+      <p><strong>Escala: </strong><span id="scale"></span></p>
+      <p><strong>Valor: </strong><span id="price"></span></p>
+      <p><strong>Quantidade de Passageiros: </strong><span id="passenger-count-info"></span></p>
+      <button onclick="" id="confirm-reservation" class="confirm-button">Confirmar Reserva</button>
+    </div>
+    <div class="modal-overlay"></div>
+  
+    <div class="modal">
+      <button class="close-modal">&times;</button>
+      <h2>Informações dos Passageiros</h2>
+      <form id="passengers-form">
+        <div id="passengers-container"></div>
+        <div>
+          <input id="confirm-passengers-data" type="submit" value="Confirmar" class="form-button">
+        </div>
+      </form>
     </div>
   </main>
 </body>
