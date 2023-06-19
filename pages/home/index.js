@@ -91,6 +91,11 @@ async function FetchDataAndRenderCards() {
         }:00</span>
       </div>
       <div>
+        Contém escala? <span id="escala">${
+          route.containsLayover ? "Sim" : "Não"
+        }</span>
+      </div>
+      <div>
         <button onclick="RedirectToBookingPage([${route.tripsUntilDestination
           .map(({ id }) => `'${id}'`)
           .join(",")}])" class="btn-reserve">Clique para saber mais</button>
