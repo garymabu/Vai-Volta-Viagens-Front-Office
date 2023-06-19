@@ -1,5 +1,13 @@
 const homeDomain = "http://localhost:8080";
 
+const redirectUrl = new URLSearchParams(window.location.search).has(
+  "redirectUrl"
+)
+  ? decodeURIComponent(
+      new URLSearchParams(window.location.search).get("redirectUrl")
+    )
+  : undefined;
+
 function FetchFormData() {
   const nome = document.querySelector("#Nome").value;
   const idade = Number(document.querySelector("#Idade").value);
@@ -60,7 +68,7 @@ async function FetchLoginAndRedirect(loginForm) {
   if (result.status === 200) {
     const token = (await result.json()).token;
     sessionStorage.setItem("token", token);
-    RedirectToUserHome();
+    RedirectToUserHomeIfThereIsntAnyRedirectUrl();
   } else
     alert("Erro ao logar! Por favor verifique seus dados e tente novamente.");
 }
@@ -77,8 +85,8 @@ async function FetchLoginAndPostLoginData() {
   FetchLoginAndRedirect(loginForm);
 }
 
-function RedirectToUserHome() {
+function RedirectToUserHomeIfThereIsntAnyRedirectUrl() {
   setTimeout(() => {
-    window.location.href = `../user_home/index.html`;
+    window.location.href = redirectUrl ?? `../user_home/index.html`;
   });
 }
