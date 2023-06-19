@@ -1,29 +1,5 @@
 const homeDomain = "http://localhost:8080";
 
-const travels = [
-  {
-    id: 1,
-    origem: "Rio de Janeiro",
-    destino: "Porto Alegre",
-    horaPartida: 10,
-    horaChegada: 15,
-  },
-  {
-    id: 2,
-    origem: "São Paulo",
-    destino: "Rio de Janeiro",
-    horaPartida: 17,
-    horaChegada: 18,
-  },
-  {
-    id: 3,
-    origem: "Bahia",
-    destino: "Porto Alegre",
-    horaPartida: 10,
-    horaChegada: 16,
-  },
-];
-
 async function FetchLocalizationsAndLoadInPage() {
   const result = await fetch(`${homeDomain}/v1/localization`, {
     method: "GET",
@@ -38,7 +14,7 @@ async function FetchLocalizationsAndLoadInPage() {
   content.forEach((localization) => {
     const option = document.createElement("option");
     option.dataset.id = localization.id;
-    option.value = localization.cityId;
+    option.value = localization.cityName;
     localizations.appendChild(option);
   });
 }
